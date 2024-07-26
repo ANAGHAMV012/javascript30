@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // for numbers, strings and boolean change in any array causes change in its reference
+        let age = 100;
+        let age2 = age;
+        console.log(age, age2);
+        age = 200;
+        console.log(age, age2);
+        let name = 'Wes';
+        let name2 = name;
+        console.log(name, name2);
+
+        // array
+        const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+        const team = players;
+        console.log(players, team);
+        // team[3] = 'Lux';
+        const team2 = players.slice();     //slice is used to make copy of an array since using reference may cause change in its original array
+        const team3 = [].concat(players);
+        const team4 = [...players];
+        team4[3] = 'heeee hawww';
+        console.log(team4);
+        const team5 = Array.from(players)
+        const team6 = team4.concat(players)
+
+        // objects
+        const person = {
+            name: 'Wes Bos',
+            age: 80
+        };
+        const captain = person;
+        captain.number = 99;
+        const wes = {
+            name: 'Wes',
+            age: 100,
+            social: {
+                twitter: '@wesbos',
+                facebook: 'wesbos.developer'
+            }
+        };
+        console.clear();
+        console.log(wes);
+        const dev = Object.assign({}, wes);
+        const dev2 = JSON.parse(JSON.stringify(wes));
+    </script>
+</body>
+</html>
+
+
