@@ -36,8 +36,16 @@
             name: 'Wes Bos',
             age: 80
         };
-        const captain = person;
-        captain.number = 99;
+        //const captain = person;
+        //captain.number = 99;               //this would make only reference of object//
+
+        //inorder to make a copy//
+        const cap2 = Object.assign({}, person, {number: 99, age:12  });
+        console.log(cap2);
+
+        const cap3 = {...person};      //spread into object  //object spread is not there in js
+
+        //object:
         const wes = {
             name: 'Wes',
             age: 100,
@@ -48,10 +56,10 @@
         };
         console.clear();
         console.log(wes);
+
+        //making copy of the object:
         const dev = Object.assign({}, wes);
         const dev2 = JSON.parse(JSON.stringify(wes));
     </script>
 </body>
 </html>
-
-
