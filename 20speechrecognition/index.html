@@ -34,6 +34,13 @@
         p = document.createElement('p');
         words.appendChild(p);
       }
+      if(transcript.includes('Unicorn')) {
+        console.log('🦄🦄🦄🦄🦄🦄🦄🦄🦄')
+      }
+      if(transcript.includes('weather')){
+        console.log('⛅')
+      }
+      console.log(transcript);
   });
 
   recognition.addEventListener('end', recognition.start);
